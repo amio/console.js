@@ -28,6 +28,7 @@
 
 .console-history dt,
 .console-history dd {
+    white-space: pre;
     margin: 0;
 }
 
