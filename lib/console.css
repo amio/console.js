@@ -1,0 +1,45 @@
+
+.console-pannel {
+    z-index: 99999;
+    display: none;
+    height: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.console-history,
+.console-input {
+    margin: 0;
+    padding: 2px 5px;
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    font: 14px/20px Menlo, monospace;
+    color: #DDD;
+    letter-spacing: 0.05em
+}
+
+.console-history {
+    bottom: 18px;
+}
+
+.console-history dt,
+.console-history dd {
+    margin: 0;
+}
+
+.console-history dt {
+    color: #8F0
+}
+
+.console-input {
+    outline: none;
+    background-color: transparent;
+    border: 0;
+    bottom: 0;
+    line-height: 16px;
+    padding: 4px 5px;
+}
