@@ -17,8 +17,24 @@ then:
 new Console({
     "addbots": function (num) {
         // add some bots,
-        // and tell player.
+        // then tell player:
         return num + ' bots added.'
     }
+});
+```
+
+## Advance Usage
+
+#### Init Console with options
+
+```
+new Console({
+    "addbots": function (num) {
+        // add some bots,
+        // then tell player:
+        return num + ' bots added.'
+    }
+}, {
+    welcome: 'Need some help? Try "help":'
 });
 ```

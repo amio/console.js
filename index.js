@@ -1,31 +1,39 @@
 window.onload = function () {
+  
+  var player = {
+    name: 'Player'
+  };
 
   var cnsl = new Console({
-    "addbots": function (num) {
-      return num + ' bots added.'
-    }
+    'name': 'setname' // alias
   },{
     welcome: 'Need some help? Try "help":'
   });
 
-  cnsl.register('setname', function (name) {
-    return 'My name is ' + name + ' now.';
+  cnsl.register('say', function (something) {
+    return player.name + ': "' + something + '"';
   }, {
-    desc: 'Change your name (works in network play too).'
+    usage: 'SAY &lt;message string&gt;',
+    desc: 'Broadcast a message to other players in the game.'
   });
 
-  cnsl.register('whosyourdaddy', function () {
-    console.log('WHOSYOURDADDY!');
+  cnsl.register('setname', function (name) {
+    player.name = name;
+    return 'Player name is ' + player.name + ' now.';
+  }, {
+    usage: 'SETNAME &lt;newname&gt; || NAME &lt;newname&gt;',
+    desc: 'Change your name (works in network play too).'
   });
 
   cnsl.register('help', function () {
     var cmds = cnsl.commands;
     for (var name in cmds) {
       if (cmds.hasOwnProperty(name)) {
-        cmds[name].desc && cnsl.log(' -', name.toUpperCase() + ':', cmds[name].desc);
+        cmds[name].desc && cnsl.log(' -', cmds[name].usage + ':', cmds[name].desc);
       }
     }
   },{
+    usage: 'HELP',
     desc: 'Show help messages.'
   });
 
