@@ -4,6 +4,8 @@ window.onload = function () {
     "addbots": function (num) {
       return num + ' bots added.'
     }
+  },{
+    welcome: 'Need some help? Try "help":'
   });
 
   cnsl.register('setname', function (name) {
