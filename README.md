@@ -28,16 +28,15 @@ new Console({
 #### Init Console with options
 
 ```
-new Console({
-    "addbots": function (num) {
-        // add some bots,
-        // then tell player:
-        return num + ' bots added.'
-    }
-}, {
-    welcome: 'Need some help? Try "help":'
+var cnsl = new Console({}, {
+    hotKey: 192, // Slash(~)
+    welcome: 'Try "help":'
 });
 ```
+
+- `hotKey`: {Number|boolean} The keyCode of hotkey.  
+If you want to manually put up console(`cnsl.toggle("on")`), set to a falsy value. 
+- `welcome`: {String} The welcome message.
 
 #### Alias
 
@@ -92,3 +91,16 @@ cnsl.register('setname',function(name){
     desc: 'Show help messages.'
 });
 ```
+
+## Instance Methods
+
+#### `.register(cmd,fn[,config])`
+
+- `.register(cmd, fn)` Register a `fn` to `cmd`
+- `.register(cmd, fn, config)` Register a `fn` to `cmd` with a config object
+
+#### `.toggle([switch])`
+
+- `.toggle()` Toggle the console
+- `.toggle("on")` Show the console
+- `.toggle("off")` Hide the console

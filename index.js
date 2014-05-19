@@ -7,7 +7,7 @@ window.onload = function () {
   var cnsl = new Console({
     'name': 'setname' // alias
   },{
-    welcome: 'Need some help? Try "help":'
+    welcome: 'Try "help":'
   });
 
   cnsl.register('say', function (something) {
