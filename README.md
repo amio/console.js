@@ -1,7 +1,9 @@
-console.js
+Console.js
 ==========
 
-A game console for web. Check the [live demo](http://amio.github.io/console.js).
+A Game Console for Browsers.
+
+Check the [live demo](http://amio.github.io/console.js).
 
 ## Usage
 
