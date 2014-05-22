@@ -5,9 +5,9 @@ window.onload = function () {
   };
 
   var cnsl = new Console({
-    'hotKey': 27, // <kbd>ESC</kbd>
-    'name': 'setname' // alias
+    name: 'setname' // Alias Command
   }, {
+    hotKey: 27, // <kbd>ESC</kbd>
     welcome: 'Try "help":'
   });
 
