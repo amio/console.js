@@ -31,7 +31,7 @@ new Console({
 
 ```
 var cnsl = new Console({}, {
-    hotKey: 192, // Slash(~)
+    hotKey: 27, // <kbd>ESC</kbd>
     welcome: 'Try "help":'
 });
 ```

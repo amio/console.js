@@ -1,12 +1,13 @@
 window.onload = function () {
-  
+
   var player = {
     name: 'Player'
   };
 
   var cnsl = new Console({
+    'hotKey': 27, // <kbd>ESC</kbd>
     'name': 'setname' // alias
-  },{
+  }, {
     welcome: 'Try "help":'
   });
 
@@ -32,7 +33,7 @@ window.onload = function () {
         cmds[name].desc && cnsl.log(' -', cmds[name].usage + ':', cmds[name].desc);
       }
     }
-  },{
+  }, {
     usage: 'HELP',
     desc: 'Show help messages.'
   });
