@@ -7,11 +7,10 @@ Check the [live demo](http://amio.github.io/console.js).
 
 ## Usage
 
-Include CSS & JS in your page:
+Include `console.min.js` in your page:
 
 ```
-	<link href="http://amio.github.io/console.js/lib/console.css" rel="stylesheet" />
-	<script src="http://amio.github.io/console.js/lib/console.js"></script>
+<script src="http://amio.github.io/console.js/lib/console.min.js"></script>
 ```
 
 then:
