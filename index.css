@@ -15,7 +15,7 @@ html, body { height : 100%; overflow : hidden; margin : 0; background : #FAFAFA;
     top         : 50%;
     margin-top  : -0.7em;
     width       : 100%;
-    font        : 60px/1.4em "PT Serif", sans-serif;
+    font        : 60px/1.4em "PT Serif", Georgia, sans-serif;
     color       : #444;
     font-weight : 700;
     text-shadow : 0 0 10px rgba(0, 0, 0, 0.2);
@@ -32,14 +32,14 @@ html, body { height : 100%; overflow : hidden; margin : 0; background : #FAFAFA;
 .code {
     height     : 65%;
     width      : 100%;
-    background : linear-gradient(to right, #EEE, rgba(160, 160, 160, 0.2), #EEE),
-                 linear-gradient(to bottom, #EEE, #FFF 24px);
+    background : linear-gradient(to right, #FAFAFA, rgba(160, 160, 160, 0.2), #FAFAFA),
+                 linear-gradient(to bottom, #F5F5F5, #FFF 24px);
 }
 
-.hint { font : 30px/2em Georgia, serif; font-weight : 700; text-align : center; width : 100%; position : fixed; top : 60% }
+.hint { font : 30px/2em "PT Serif", Georgia, serif; font-weight : 700; text-align : center; width : 100%; position : fixed; top : 60% }
 
 kbd {
-    padding       : .15em .5em .05em .5em;
+    padding       : .15em .6em .05em .6em;
     border        : 1px solid #ccc;
     font-family   : Menlo, monospace;
     background    : #EEE;
