@@ -1,13 +1,21 @@
 
-.console-pannel {
+.console-panel {
     z-index: 99999;
-    display: none;
+    display: block;
+    visibility: hidden;
     height: 50%;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.8);
+    margin-top: -50%;
+    transition: margin-top 100ms ease-out 1ms;
+}
+
+.console-panel.shown {
+    visibility: visible;
+    margin-top: 0;
 }
 
 .console-history,
