@@ -2,7 +2,7 @@ window.onload = function () {
 
   // Init Console
   var cnsl = new Console({}, {
-    hotKey: 27, // <kbd>ESC</kbd>
+    hotkey: 27, // <kbd>ESC</kbd>
     welcome: 'Try "help":'
   });
 
