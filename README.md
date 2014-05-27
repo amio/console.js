@@ -32,6 +32,7 @@ new Console({
 var cnsl = new Console({}, {
     hotkey: 27, // <kbd>ESC</kbd> ('~' for default)
     welcome: 'Try "help":',
+    defaultHandler: function(){}
     onShow: function(){},
     onHide: function(){}
 });
@@ -39,6 +40,7 @@ var cnsl = new Console({}, {
 
 - `hotkey` : {Number|boolean} The keyCode of hotkey. *Hint: If you want to manually put up console(`cnsl.toggle("on")`), set to a falsy value.* 
 - `welcome`: {String} The welcome message.
+- `defaultHandler`: {Function} the default handler for any unspecified command.
 - `onShow` : {Function} On show callback.
 - `onHide` : {Function} On hide callback.
 
