@@ -31,7 +31,7 @@ new Console({
 ```
 var cnsl = new Console({}, {
     hotkey: 27, // <kbd>ESC</kbd> ('~' for default)
-    welcome: 'Try "help":',
+    welcome: 'Hello User.',
     defaultHandler: function(){}
     onShow: function(){},
     onHide: function(){}
