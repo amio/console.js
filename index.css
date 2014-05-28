@@ -64,3 +64,40 @@ kbd {
     text-decoration: none;
     color: #6BF;
 }
+
+/***** Fork me on Github *****/
+
+#fork-me-on-github {
+    opacity: 0.8;
+    background-color: #222;
+    color: #FFF;
+    display: block;
+    position: fixed;
+    z-index: 10;
+    right: -6em;
+    top: 3em;
+    padding: 0.5em 5em 0.4em 5em;
+    -webkit-transform: rotate(45deg) scale(0.75, 1);
+    transform: rotate(45deg) scale(0.75, 1);
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 0.75em #444;
+    font: bold 16px/1.2em Arial, Sans-Serif;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: .05em;
+}
+
+#fork-me-on-github:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 2px rgba(255, 255, 255, 0.7) dashed;
+    margin: -0.3em -5em;
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+}
+
+#fork-me-on-github:hover { opacity: 1; }
