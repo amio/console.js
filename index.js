@@ -15,8 +15,8 @@ window.onload = function () {
    */
 
   var handlers = {
-    say: function (something) {
-      return player.name + ': "' + something + '"';
+    say: function () {
+      return player.name + ': "' + Array.prototype.join.call(arguments, ' ') + '"';
     },
     name: 'setname',
     setname: function (name) {
