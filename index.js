@@ -80,7 +80,7 @@ window.onload = function () {
     'more': 'Visit <a href="http://github.com/amio/console.js/">http://github.com/amio/console.js/</a>'
   };
 
-  new Console({
+  var smtc = new Console({
     "showmethecode": function () {
       return ' - createconsole: How to init a new console.\n' +
       ' - options: Available options.\n' +
@@ -93,5 +93,9 @@ window.onload = function () {
       return showmethecode[cmd];
     }
   });
+
+  // For tablet visiters
+  document.getElementById('slash').addEventListener('click', function () {cnsl.toggle()})
+  document.getElementById('esc').addEventListener('click', function () {smtc.toggle()})
 
 };
