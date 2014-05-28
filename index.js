@@ -65,15 +65,18 @@ window.onload = function () {
     'options': 'new Console({}, {\n\
     hotkey: 27, \n\
     welcome: "Hello User:",\n\
+    caseSensitive: true,\n\
     defaultHandler: function(){}\n\
     onShow: function(){},\n\
     onHide: function(){}\n\
 });\n\
-- `hotkey` : {Number|boolean} The keyCode of hotkey. *Hint: If you want to manually put up console(`cnsl.toggle("on")`), set to a falsy value.* \n\
-- `welcome`: {String} The welcome message.\n\
-- `defaultHandler`: {Function} the default handler for any unspecified command.\n\
-- `onShow` : {Function} On show callback.\n\
-- `onHide` : {Function} On hide callback.',
+ - `hotkey` : {Number|boolean} The keyCode of hotkey. *Hint: If you want to manually put\
+ up console(`cnsl.toggle("on")`), set to a falsy value.* `192` by default, the "~".\n\
+ - `welcome`: {String} The welcome message. `""` by default.\n\
+ - `caseSensitive`: {Boolean} If you want to. `false` by default.\
+ - `defaultHandler`: {Function} the default handler for any unspecified command. `null` by default.\n\
+ - `onShow` : {Function} On show callback. `null` by default.\n\
+ - `onHide` : {Function} On hide callback. `null` by default.',
     'more': 'Visit <a href="http://github.com/amio/console.js/">http://github.com/amio/console.js/</a>'
   };
 
