@@ -2,8 +2,7 @@ window.onload = function () {
 
   // Init Console
   var cnsl = new Console({}, {
-    hotkey: 27, // <kbd>ESC</kbd>
-    welcome: 'Try "help":'
+    welcome: 'Hello user. Need any "help"?'
   });
 
   // Game data
@@ -52,5 +51,44 @@ window.onload = function () {
   for (var cmdname in handlers) {
     cnsl.register(cmdname, handlers[cmdname], handlerProps[cmdname]);
   }
+
+  // Init Console
+
+  var showmethecode = {
+    'createconsole': 'new Console({\n\
+  "addbots": function (num) {\n\
+      // add some bots,\n\
+      // then tell player:\n\
+      return num + " bots added."\n\
+  }\n\
+});',
+    'options': 'new Console({}, {\n\
+    hotkey: 27, \n\
+    welcome: "Hello User:",\n\
+    defaultHandler: function(){}\n\
+    onShow: function(){},\n\
+    onHide: function(){}\n\
+});\n\
+- `hotkey` : {Number|boolean} The keyCode of hotkey. *Hint: If you want to manually put up console(`cnsl.toggle("on")`), set to a falsy value.* \n\
+- `welcome`: {String} The welcome message.\n\
+- `defaultHandler`: {Function} the default handler for any unspecified command.\n\
+- `onShow` : {Function} On show callback.\n\
+- `onHide` : {Function} On hide callback.',
+    'more': 'Visit <a href="http://github.com/amio/console.js/">http://github.com/amio/console.js/</a>'
+  };
+
+  new Console({
+    "showmethecode": function () {
+      return ' - createconsole: How to init a new console.\n' +
+      ' - options: Available options.\n' +
+      ' - more: More docs.';
+    }
+  }, {
+    hotkey: 27, // <kbd>ESC</kbd>
+    welcome: 'Use "showmethecode":',
+    defaultHandler: function (cmd) {
+      return showmethecode[cmd];
+    }
+  });
 
 };

@@ -59,3 +59,8 @@ kbd {
     line-height: 1.4;
     white-space: nowrap;
 }
+
+.console-history a {
+    text-decoration: none;
+    color: #6BF;
+}
