@@ -52,45 +52,45 @@ window.onload = function () {
     cnsl.register(cmdname, handlers[cmdname], handlerProps[cmdname]);
   }
 
-  // Init Console
+  // Init Console 2
 
-  var showmethecode = {
-    'createconsole': 'new Console({\n\
-  "addbots": function (num) {\n\
-      // add some bots,\n\
-      // then tell player:\n\
-      return num + " bots added."\n\
-  }\n\
-});',
-    'options': 'new Console({}, {\n\
-    hotkey: 27, \n\
-    welcome: "Hello User:",\n\
-    caseSensitive: true,\n\
-    defaultHandler: function(){}\n\
-    onShow: function(){},\n\
-    onHide: function(){}\n\
-});\n\
- - `hotkey` : {Number|boolean} The keyCode of hotkey. *Hint: If you want to manually put\
- up console(`cnsl.toggle("on")`), set to a falsy value.* `192` by default, the "~".\n\
- - `welcome`: {String} The welcome message. `""` by default.\n\
- - `caseSensitive`: {Boolean} If you want to. `false` by default.\
- - `defaultHandler`: {Function} the default handler for any unspecified command. `null` by default.\n\
- - `onShow` : {Function} On show callback. `null` by default.\n\
- - `onHide` : {Function} On hide callback. `null` by default.',
+  var codes = {
+    'showmethecode':
+      ' - createconsole: How to init a new console.\n' +
+      ' - options: Available options.\n' +
+      ' - more: More docs.',
+    'createconsole':
+      'new Console({\n' +
+      '  "addbots": function (num) {\n' +
+      '      // add some bots,\n' +
+      '      // then tell player:\n' +
+      '      return num + " bots added."\n' +
+      '  }\n' +
+      '});',
+    'options':
+      'new Console({}, {\n' +
+      '    hotkey: 27, \n' +
+      '    welcome: "Hello User:",\n' +
+      '    caseSensitive: true,\n' +
+      '    defaultHandler: function(){}\n' +
+      '    onShow: function(){},\n' +
+      '    onHide: function(){}\n' +
+      '});\n' +
+      ' - `hotkey` : {Number|boolean} The keyCode of hotkey. *Hint: If you want to manually put' +
+      ' up console(`cnsl.toggle("on")`), set to a falsy value.* `192` by default, the "~".\n' +
+      ' - `welcome`: {String} The welcome message. `""` by default.\n' +
+      ' - `caseSensitive`: {Boolean} If you want to. `false` by default.' +
+      ' - `defaultHandler`: {Function} the default handler for any unspecified command. `null` by default.\n' +
+      ' - `onShow` : {Function} On show callback. `null` by default.\n' +
+      ' - `onHide` : {Function} On hide callback. `null` by default.',
     'more': 'Visit <a href="http://github.com/amio/console.js/">http://github.com/amio/console.js/</a>'
   };
 
-  var smtc = new Console({
-    "showmethecode": function () {
-      return ' - createconsole: How to init a new console.\n' +
-      ' - options: Available options.\n' +
-      ' - more: More docs.';
-    }
-  }, {
+  var smtc = new Console({}, {
     hotkey: 27, // <kbd>ESC</kbd>
     welcome: 'Use "showmethecode":',
     defaultHandler: function (cmd) {
-      return showmethecode[cmd];
+      return codes[cmd];
     }
   });
 
