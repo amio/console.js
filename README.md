@@ -3,7 +3,7 @@ Console.js
 
 A Game Console for Browsers.
 
-Check the [live demo](http://amio.github.io/console.js).
+Check the [live demo](http://amio.github.io/console.js), or [Usage](#usage) / [Advance Usage](#advance-usage) / [API](#api).
 
 ## Usage
 
@@ -62,6 +62,8 @@ new Console({
 
 #### Late register command
 
+`.register(command, commandHandler)`
+
 ```
 var playerName = 'Player';
 
@@ -74,6 +76,8 @@ cnsl.register('setname',function(name){
 ```
 
 #### Late register command with extra (any) config
+
+`.register(command, commandHandler, commandConfig)`
 
 ```
 var playerName = 'Player';
@@ -101,15 +105,27 @@ cnsl.register('setname',function(name){
 });
 ```
 
+# API
+
+## Create a Console
+
+- `new Console()` Create a console (with default options).
+- `new Console(cmdObj)` Create a console with command handlers.
+- `new Console({}, optionObj)` Create a console with options. (see [Init console with options](#init-console-with-options))
+
 ## Instance Methods
 
-#### `.register(cmd,fn[,config])`
+#### .register(cmd, fn[, config])
 
 - `.register(cmd, fn)` Register a `fn` to `cmd`
 - `.register(cmd, fn, config)` Register a `fn` to `cmd` with a config object
 
-#### `.toggle([switch])`
+#### .toggle([switch])
 
 - `.toggle()` Toggle the console
 - `.toggle("on")` Show the console
 - `.toggle("off")` Hide the console
+
+#### .destroy()
+
+- `.destroy()` Suicide.
