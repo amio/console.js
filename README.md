@@ -1,7 +1,7 @@
 Console.js
 ==========
 
-A Game Console for Browsers.
+A game console for browsers.
 
 Check the [live demo](http://amio.github.io/console.js), or [Usage](#usage) / [Advance Usage](#advance-usage) / [API](#api).
 
@@ -12,6 +12,8 @@ Include `console.min.js` in your page:
 ```
 <script src="http://amio.github.io/console.js/lib/console.min.js"></script>
 ```
+
+or just use `bower`: `bower install console.js`
 
 then:
 ```
