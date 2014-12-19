@@ -11,7 +11,7 @@ var cssholder = '/* CONSOLE CSS */';
 
 gulp.task('build', function(){
   gulp.src('lib/console.js')
-  .pipe(replace(cssholder, new CleanCSS().minify(fs.readFileSync(cssfile))))
+  .pipe(replace(cssholder, new CleanCSS().minify(fs.readFileSync(cssfile)).styles))
   .pipe(uglify())
   .pipe(rename('console.min.js'))
   .pipe(gulp.dest('./lib/'));

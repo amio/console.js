@@ -6,9 +6,9 @@
   "devDependencies": {
     "gulp": "*",
     "gulp-rename": "^1.2.0",
-    "gulp-replace": "^0.3.0",
-    "gulp-uglify": "^0.3.0",
-    "clean-css": "^2.1.8"
+    "gulp-replace": "^0.5.0",
+    "gulp-uglify": "^1.0.2",
+    "clean-css": "^3.0.0"
   },
   "engines": {
     "node": ">=0.10.0"
