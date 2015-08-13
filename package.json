@@ -1,8 +1,24 @@
 {
   "name": "console.js",
   "homepage": "http://amio.github.io/console.js/",
-  "repository": "amio/console.js",
   "version": "1.0.2",
+  "scripts": {
+    "patch": "npm version patch -m 'v%s'",
+    "minor": "npm version minor -m 'v%s'",
+    "major": "npm version major -m 'v%s'"
+  },
+  "author": {
+    "name": "Amio",
+    "email": "amio.cn@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amio/console.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/amio/console.js/issues"
+  },
+  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
     "clean-css": "3.3.x",
