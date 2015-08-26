@@ -7,7 +7,7 @@ A game console for browsers.
 
 Check the [live demo](http://amio.github.io/console.js), or [Usage](#usage) / [Advance Usage](#advance-usage) / [API](#api).
 
-## Usage
+## Basic Usage
 
 Include `console.min.js` in your page:
 
@@ -17,7 +17,7 @@ Include `console.min.js` in your page:
 
 or just use `bower`: `bower install console.js`
 
-then:
+then create a Console:
 ```
 new Console({
     "addbots": function (num) {
@@ -114,8 +114,8 @@ cnsl.register('setname',function(name){
 ## Create a Console
 
 - `new Console()` Create a console (with default options).
-- `new Console(cmdObj)` Create a console with command handlers.
-- `new Console({}, optionObj)` Create a console with options. (see [Init console with options](#init-console-with-options))
+- `new Console(cmdObj)` Create a console with command handlers. (see [Basic Usage](#basic-usage))
+- `new Console(cmdObj, optionsObj)` Create a console with options. (see [Init console with options](#init-console-with-options))
 
 ## Instance Methods
 
