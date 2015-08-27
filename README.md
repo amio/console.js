@@ -3,9 +3,9 @@ Console.js
 
 A game console for browsers.
 
-![Console.js Screenshot](https://cloud.githubusercontent.com/assets/215282/9493105/e7e3ee38-4c2f-11e5-85cc-c24168e8c706.png)
+[![Console.js Screenshot](https://cloud.githubusercontent.com/assets/215282/9493105/e7e3ee38-4c2f-11e5-85cc-c24168e8c706.png)](http://amio.github.io/console.js)
 
-Check the [live demo](http://amio.github.io/console.js), or [Usage](#usage) / [Advance Usage](#advance-usage) / [API](#api).
+Check the [live demo](http://amio.github.io/console.js), or [Basic Usage](#basic-usage) / [Advance Usage](#advance-usage) / [API](#api).
 
 ## Basic Usage
 
