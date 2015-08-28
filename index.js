@@ -59,7 +59,7 @@ window.onload = function () {
       ' - createconsole: How to init a new console.\n' +
       ' - options: Available options.\n' +
       ' - more: More docs.',
-    'createconsole':
+    'create':
       'new Console({\n' +
       '  "addbots": function (num) {\n' +
       '      // add some bots,\n' +
@@ -93,6 +93,11 @@ window.onload = function () {
       return codes[cmd];
     }
   });
+
+  smtc.register("showmethecode", function () { return codes['showmethecode'] })
+  smtc.register("create", function () { return codes['create'] })
+  smtc.register("options", function () { return codes['options'] })
+  smtc.register("more", function () { return codes['more'] })
 
   // For tablet visiters
   document.getElementById('slash').addEventListener('click', function () {cnsl.toggle()})
