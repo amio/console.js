@@ -5,7 +5,8 @@
   "scripts": {
     "patch": "npm version patch -m 'v%s'",
     "minor": "npm version minor -m 'v%s'",
-    "major": "npm version major -m 'v%s'"
+    "major": "npm version major -m 'v%s'",
+    "postversion": "git push; git push --tags"
   },
   "author": {
     "name": "Amio",
