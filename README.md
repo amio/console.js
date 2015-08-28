@@ -9,15 +9,13 @@ Check the [live demo](http://amio.github.io/console.js), or [Basic Usage](#basic
 
 ## Basic Usage
 
-Include `console.min.js` in your page:
+1. Install console.js, either:
+  - use npm: `npm install console.js`
+  - use bower: `bower install console.js`
+  - directly include `console.min.js` in your page:   
+    `<script src="http://amio.github.io/console.js/lib/console.min.js"></script>`
 
-```
-<script src="http://amio.github.io/console.js/lib/console.min.js"></script>
-```
-
-or just use `bower`: `bower install console.js`
-
-then create a Console:
+1. Create a Console:
 ```
 new Console({
     "addbots": function (num) {
