@@ -111,8 +111,8 @@ cnsl.register('setname',function(name){
 ## Create a Console
 
 - `new Console()` Create a console (with default options).
-- `new Console(cmdObj)` Create a console with command handlers. (see [Basic Usage](#basic-usage))
-- `new Console(cmdObj, optionsObj)` Create a console with options. (see [Init console with options](#init-console-with-options))
+- `new Console(cmdsObj)` Create a console with command handlers. (see [Basic Usage](#basic-usage))
+- `new Console(cmdsObj, optionsObj)` Create a console with options. (see [Init console with options](#init-console-with-options))
 
 ## Instance Methods
 
