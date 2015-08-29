@@ -11,7 +11,7 @@ Check the [Live Demo](http://amio.github.io/console.js), or [Basic Usage](#basic
 1. Install console.js, either:
   - use npm: `npm install console.js`
   - use bower: `bower install console.js`
-  - directly include `console.min.js` in your page:   
+  - directly include `console.min.js` in your page:
     `<script src="http://amio.github.io/console.js/lib/console.min.js"></script>`
 
 1. Create a Console:
@@ -126,6 +126,11 @@ cnsl.register('setname',function(name){
 - `.toggle()` Toggle the console
 - `.toggle("on")` Show the console
 - `.toggle("off")` Hide the console
+
+#### .printHelp([filterFn])
+
+- `.printHelp()` List available commands to console.
+- `.printHelp( function(x){ return x.indexOf('se') === 0 } )` List commands which starts with "se" to.
 
 #### .destroy()
 
