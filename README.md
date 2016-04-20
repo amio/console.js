@@ -1,6 +1,6 @@
 # Console.js
 
-A game console for browsers.
+`Console.js` is a tiny lib for building game-console-like popups in browser.
 
 [![Console.js Screenshot](https://cloud.githubusercontent.com/assets/215282/9493105/e7e3ee38-4c2f-11e5-85cc-c24168e8c706.png)](http://amio.github.io/console.js)
 
