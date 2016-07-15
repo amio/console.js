@@ -1,34 +1,37 @@
 {
-  "name": "console.js",
-  "homepage": "http://amio.github.io/console.js/",
+  "name": "Console.js",
+  "license": "MIT",
   "version": "1.1.0",
+  "author": "Amio <amio.cn@gmail.com>",
+  "repository": "amio/console.js",
+  "homepage": "http://amio.github.io/console.js/",
+  "bugs": "https://github.com/amio/console.js/issues",
   "scripts": {
+    "build": "rollup -c",
+    "watch": "chokidar 'src/**' -c 'npm run build'",
     "patch": "npm version patch -m 'v%s'",
     "minor": "npm version minor -m 'v%s'",
     "major": "npm version major -m 'v%s'",
     "postversion": "git push; git push --tags"
   },
-  "author": {
-    "name": "Amio",
-    "email": "amio.cn@gmail.com"
+  "dependencies": {
+    "riot": "^2.5.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/amio/console.js.git"
-  },
-  "bugs": {
-    "url": "https://github.com/amio/console.js/issues"
-  },
-  "license": "MIT",
-  "dependencies": {},
   "devDependencies": {
     "clean-css": "3.3.x",
     "gulp": "3.8.x",
     "gulp-rename": "1.2.x",
     "gulp-replace": "0.5.x",
-    "gulp-uglify": "1.2.x"
+    "gulp-uglify": "1.2.x",
+    "babel-preset-es2015-rollup": "1.1.1",
+    "chokidar-cli": "^1.2.0",
+    "rollup": "^0.33.0",
+    "rollup-plugin-babel": "2.6.1",
+    "rollup-plugin-commonjs": "^3.1.0",
+    "rollup-plugin-node-resolve": "^1.7.1",
+    "rollup-plugin-riot": "^0.4.0"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=4.0.0"
   }
 }
