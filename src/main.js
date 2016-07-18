@@ -1,6 +1,6 @@
 import riot from 'riot'
 import './console.tag'
-import './md.tag'
+import './logline.tag'
 
 class Console {
   constructor (cfg = {}) {
@@ -12,7 +12,8 @@ class Console {
 
   initWrapperElement () {
     const wrapper = document.createElement('console')
-    wrapper.className = this.wrapperClassName
+    wrapper.style.height = Math.round(window.innerHeight / 2) + 'px'
+
     document.body.insertBefore(wrapper, document.body.firstChild)
     return wrapper
   }

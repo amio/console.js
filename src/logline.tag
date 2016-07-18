@@ -1,4 +1,4 @@
-<md>
+<logline>
   <script>
     import marked from 'marked'
 
@@ -10,4 +10,4 @@
       display: block;
     }
   </style>
-</md>
+</logline>
