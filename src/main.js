@@ -2,10 +2,21 @@ import riot from 'riot'
 import './console.tag'
 import './logline.tag'
 
+const defaultConfig = {
+  hotkey: 192, // '~'
+  welcome: '',
+  onShow: null,
+  onHide: null,
+  defaultHandler: null,
+  caseSensitive: false,
+  historySize: 256
+}
+
 class Console {
   constructor (cfg = {}) {
     this.wrapper = this.initWrapperElement()
-    this.wrapperClassName = 'console-panel'
+    this.config = {...defaultConfig, ...cfg}
+    this.history = []
 
     riot.mount(this.wrapper)
   }
@@ -17,6 +28,16 @@ class Console {
     document.body.insertBefore(wrapper, document.body.firstChild)
     return wrapper
   }
+
+  createHotkeyListener(keyCode) {
+    return (e) => {
+      if (e.keyCode === keyCode) {
+        this.toggle()
+        e.preventDefault()
+      }
+    }
+  }
+
 }
 
 export default Console

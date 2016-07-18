@@ -18,13 +18,14 @@
     "riot": "^2.5.0"
   },
   "devDependencies": {
+    "babel-preset-es2015-rollup": "1.1.1",
+    "babel-preset-stage-2": "^6.11.0",
+    "chokidar-cli": "^1.2.0",
     "clean-css": "3.3.x",
     "gulp": "3.8.x",
     "gulp-rename": "1.2.x",
     "gulp-replace": "0.5.x",
     "gulp-uglify": "1.2.x",
-    "babel-preset-es2015-rollup": "1.1.1",
-    "chokidar-cli": "^1.2.0",
     "rollup": "^0.33.0",
     "rollup-plugin-babel": "2.6.1",
     "rollup-plugin-commonjs": "^3.1.0",
