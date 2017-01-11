@@ -8,25 +8,17 @@
     "major": "npm version major -m 'v%s'",
     "postversion": "git push; git push --tags"
   },
-  "author": {
-    "name": "Amio",
-    "email": "amio.cn@gmail.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/amio/console.js.git"
-  },
-  "bugs": {
-    "url": "https://github.com/amio/console.js/issues"
-  },
+  "author": "Amio <amio.cn@gmail.com>",
+  "repository": "https://github.com/amio/console.js.git",
+  "bugs": "https://github.com/amio/console.js/issues",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "clean-css": "3.3.x",
-    "gulp": "3.8.x",
+    "clean-css": "3.4.x",
+    "gulp": "3.9.x",
     "gulp-rename": "1.2.x",
     "gulp-replace": "0.5.x",
-    "gulp-uglify": "1.2.x"
+    "gulp-uglify": "2.0.x"
   },
   "engines": {
     "node": ">=0.10.0"
