@@ -2,7 +2,7 @@
   "name": "console.js",
   "homepage": "http://amio.github.io/console.js/",
   "version": "1.2.0",
-  "main": "lib/console.js",
+  "main": "lib/console.min.js",
   "scripts": {
     "build": "gulp build",
     "patch": "npm version patch -m 'v%s'",
