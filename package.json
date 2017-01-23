@@ -1,26 +1,26 @@
 {
   "name": "console.js",
-  "homepage": "http://amio.github.io/console.js/",
   "version": "1.2.2",
+  "repository": "https://github.com/amio/console.js.git",
+  "author": "Amio <amio.cn@gmail.com>",
+  "license": "MIT",
   "main": "lib/console.min.js",
   "scripts": {
     "build": "gulp build",
+    "dev": "webpack --watch",
     "patch": "npm version patch -m 'v%s'",
     "minor": "npm version minor -m 'v%s'",
     "major": "npm version major -m 'v%s'",
     "postversion": "git push; git push --tags"
   },
-  "author": "Amio <amio.cn@gmail.com>",
-  "repository": "https://github.com/amio/console.js.git",
-  "bugs": "https://github.com/amio/console.js/issues",
-  "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "preact": "^7.1.0"
+  },
   "devDependencies": {
-    "clean-css": "3.4.x",
-    "gulp": "3.9.x",
-    "gulp-rename": "1.2.x",
-    "gulp-replace": "0.5.x",
-    "gulp-uglify": "2.0.x"
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015-webpack": "^6.4.3",
+    "babel-preset-react": "^6.22.0",
+    "webpack": "^2.2.0"
   },
   "engines": {
     "node": ">=4.0.0"
