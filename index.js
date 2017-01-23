@@ -1,14 +1,13 @@
 window.onload = function () {
-
   // Init Console
-  var cnsl = new Console({}, {
+  var cnsl = new window.Console({}, {
     welcome: 'Hello user. Need any "help"?'
-  });
+  })
 
   // Game data
   var player = {
     name: 'Player'
-  };
+  }
 
   /**
    * Register console command handlers.
@@ -16,22 +15,22 @@ window.onload = function () {
 
   var handlers = {
     say: function () {
-      return player.name + ': "' + Array.prototype.join.call(arguments, ' ') + '"';
+      return player.name + ': "' + Array.prototype.join.call(arguments, ' ') + '"'
     },
     name: 'setname',
     setname: function (name) {
-      player.name = name;
-      return 'Player name is ' + player.name + ' now.';
+      player.name = name
+      return 'Player name is ' + player.name + ' now.'
     },
     help: function () {
-      var cmds = cnsl.commands;
+      var cmds = cnsl.commands
       for (var name in cmds) {
         if (cmds.hasOwnProperty(name)) {
-          cmds[name].desc && cnsl.log(' -', cmds[name].usage + ':', cmds[name].desc);
+          cmds[name].desc && cnsl.log(' -', cmds[name].usage + ':', cmds[name].desc)
         }
       }
     }
-  };
+  }
 
   var handlerProps = {
     say: {
@@ -46,10 +45,10 @@ window.onload = function () {
       usage: 'HELP',
       desc: 'Show help messages.'
     }
-  };
+  }
 
   for (var cmdname in handlers) {
-    cnsl.register(cmdname, handlers[cmdname], handlerProps[cmdname]);
+    cnsl.register(cmdname, handlers[cmdname], handlerProps[cmdname])
   }
 
   // Init Console 2
@@ -84,23 +83,23 @@ window.onload = function () {
       ' - `onShow` : {Function} On show callback. `null` by default.\n' +
       ' - `onHide` : {Function} On hide callback. `null` by default.',
     'more': 'Visit <a href="http://github.com/amio/console.js/">http://github.com/amio/console.js/</a>'
-  };
+  }
 
-  var smtc = new Console({}, {
+  var smtc = new window.Console({}, {
     hotkey: 27, // <kbd>ESC</kbd>
     welcome: 'Use "showmethecode":',
+    caseSensitive: true,
     defaultHandler: function (cmd) {
-      return codes[cmd];
+      return codes[cmd]
     }
-  });
+  })
 
-  smtc.register("showmethecode", function () { return codes['showmethecode'] })
-  smtc.register("create", function () { return codes['create'] })
-  smtc.register("options", function () { return codes['options'] })
-  smtc.register("more", function () { return codes['more'] })
+  smtc.register('showmethecode', function () { return codes['showmethecode'] })
+  smtc.register('create', function () { return codes['create'] })
+  smtc.register('options', function () { return codes['options'] })
+  smtc.register('more', function () { return codes['more'] })
 
   // For tablet visiters
-  document.getElementById('slash').addEventListener('click', function () {cnsl.toggle()})
-  document.getElementById('esc').addEventListener('click', function () {smtc.toggle()})
-
-};
+  document.getElementById('slash').addEventListener('click', function () { cnsl.toggle() })
+  document.getElementById('esc').addEventListener('click', function () { smtc.toggle() })
+}
