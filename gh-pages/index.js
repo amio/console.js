@@ -1,6 +1,6 @@
 window.onload = function () {
   // Init Console
-  var cnsl = new window.Console({}, {
+  var cnsl = new window.Console({
     welcome: 'Hello user. Need any "help"?'
   })
 
@@ -85,7 +85,7 @@ window.onload = function () {
     'more': 'Visit <a href="http://github.com/amio/console.js/">http://github.com/amio/console.js/</a>'
   }
 
-  var smtc = new window.Console({}, {
+  var smtc = new window.Console({
     hotkey: 27, // <kbd>ESC</kbd>
     welcome: 'Use "showmethecode":',
     caseSensitive: true,

@@ -1,6 +1,7 @@
+const webpack = require('webpack')
 const path = require('path')
 
-module.exports = {
+const config = {
   entry: './src/console.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -19,6 +20,7 @@ module.exports = {
       }
     ]
   },
+  plugins: [],
   resolve: {
     alias: {
       'react': 'preact/aliases',
@@ -26,3 +28,27 @@ module.exports = {
     }
   }
 }
+
+if (process.env.NODE_ENV === 'production') {
+  config.plugins.push(
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        screw_ie8: true
+      }
+    })
+  )
+} else {
+  config.devtool = '#cheap-module-source-map'
+  config.devServer = {
+    contentBase: '.',
+    hot: true,
+    inline: true,
+    host: '0.0.0.0',
+    port: 2708
+  }
+  config.plugins.push(
+    new webpack.HotModuleReplacementPlugin()
+  )
+}
+
+module.exports = config
