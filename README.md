@@ -8,29 +8,30 @@ Check the [Live Demo](http://amio.github.io/console.js), or [Basic Usage](#basic
 
 ## Basic Usage
 
-1. Install console.js, either:
-  - use npm: `npm install console.js`
-  - use bower: `bower install console.js`
-  - directly include `console.min.js` in your page:
-    `<script src="http://amio.github.io/console.js/lib/console.min.js"></script>`
+1. To install console.js, either:
+
+  - Use npm: `npm install console.js`
+  - Include `console.js` in html:  
+    `<script src="https://unpkg.com/console.js@2"></script>`
 
 1. Create a Console:
-```
-new Console({
-    "addbots": function (num) {
-        // add some bots,
-        // then tell player:
-        return num + ' bots added.'
-    }
-});
+
+```javascript
+const cnsl = new Console({ hotkey: 192 })
+
+cnsl.register('addbots', function (num) {
+    // Add some bots,
+    // then tell player:
+    return num + ' bots added.'
+})
 ```
 
 ## Advance Usage
 
-#### Init Console with options
+#### Options
 
-```
-var cnsl = new Console({}, {
+```javascript
+var cnsl = new Console({
     hotkey: 27, // <kbd>ESC</kbd> ('~' for default)
     welcome: 'Hello User.',
     caseSensitive: true,
@@ -50,7 +51,7 @@ var cnsl = new Console({}, {
 
 #### Alias
 
-```
+```javascript
 new Console({
     "add": "addbots",
     "addbots": function (num) {
@@ -61,26 +62,11 @@ new Console({
 });
 ```
 
-#### Late register command
-
-`.register(command, commandHandler)`
-
-```
-var playerName = 'Player';
-
-var cnsl = new Console();
-
-cnsl.register('setname',function(name){
-    playerName = name;
-    return 'Player name is' + playerName + ' now.';
-});
-```
-
-#### Late register command with extra (any) config
+#### Register command with extra config
 
 `.register(command, commandHandler, commandConfig)`
 
-```
+```javascript
 var playerName = 'Player';
 
 var cnsl = new Console();
@@ -110,9 +96,8 @@ cnsl.register('setname',function(name){
 
 ## Create a Console
 
-- `new Console()` Create a console (with default options).
-- `new Console(cmdsObj)` Create a console with command handlers. (see [Basic Usage](#basic-usage))
-- `new Console(cmdsObj, optionsObj)` Create a console with options. (see [Init console with options](#init-console-with-options))
+- `new Console()` Create a console instance (with default options).
+- `new Console(options)` Create a console with options. (see [Basic Usage](#basic-usage))
 
 ## Instance Methods
 
