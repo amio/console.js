@@ -4,7 +4,7 @@ class PanelHistory extends React.Component {
   renderLogs (logs) {
     const els = []
     logs.forEach(log => {
-      log.cmd && els.push(<dt style={styles.cmd}>{ log.cmd }</dt>)
+      log.ins && els.push(<dt style={styles.cmd}>{ log.ins }</dt>)
       log.msg && els.push(<dd style={styles.msg}>{ log.msg }</dd>)
     })
     return els
@@ -30,7 +30,8 @@ const styles = {
   },
   msg: {
     margin: 0,
-    color: '#DDD'
+    color: '#DDD',
+    whiteSpace: 'pre'
   },
   cmd: {
     margin: 0,
