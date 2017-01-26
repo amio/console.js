@@ -94,10 +94,13 @@ function customeAutoComplete (inputString) {
 
 ### Create a Console
 
-- `new Console()` Create a console instance (with default options).
+- `new Console()` Create a console instance (with default options)
 - `new Console(options)` Create a console with options. (see [Basic Usage](#basic-usage))
 
 ### Instance Methods
+
+Note: Console instances on [https://amio.github.io/console.js/](https://amio.github.io/console.js/)
+were exposed on window. You can fiddle with them(`window.cnsl` and `window.smtc`) in devtools.
 
 #### .register(command, handler[, config])
 
@@ -107,8 +110,12 @@ function customeAutoComplete (inputString) {
 
 #### .log(msg[, cmd])
 
-- `.log(msg)` Write a message to console.
-- `.log(msg, cmd)` Write a message with an instruction to console.
+- `.log(msg)` Write a message to console
+- `.log(msg, cmd)` Write a message with an instruction to console
+
+#### .clear()
+
+- `.clear()` Clear history
 
 #### .toggle([switch])
 

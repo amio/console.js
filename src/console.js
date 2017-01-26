@@ -52,6 +52,14 @@ Console.prototype.log = function (message, instruction) {
     ins: instruction,
     msg: message
   })
+  this._render()
+}
+
+Console.prototype.clear = function () {
+  while (this.history.length) {
+    this.history.shift()
+  }
+  this._render()
 }
 
 Console.prototype.register = function (cmd, handler, config) {
