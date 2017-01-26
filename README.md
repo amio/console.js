@@ -1,10 +1,10 @@
-# Console.js
+# Console.js [![npm-version][npm-badge]][npm-link]
 
 `Console.js` is a tiny lib for creating [Console (video game cli)](https://en.wikipedia.org/wiki/Console_(video_game_CLI)) popups in browser.
 
-[![Console.js Screenshot](https://cloud.githubusercontent.com/assets/215282/9493105/e7e3ee38-4c2f-11e5-85cc-c24168e8c706.png)](http://amio.github.io/console.js)
+[![Console.js Screenshot][screenshot]][home]
 
-Check the [Live Demo](http://amio.github.io/console.js), or [Basic Usage](#basic-usage) / [Advance Usage](#advance-usage) / [API](#api).
+Check the [Live Demo][home], or [Basic Usage](#basic-usage) / [Advance Usage](#advance-usage) / [API](#api).
 
 ## Basic Usage
 
@@ -99,7 +99,7 @@ function customeAutoComplete (inputString) {
 
 ### Instance Methods
 
-Note: Console instances on [https://amio.github.io/console.js/](https://amio.github.io/console.js/)
+Note: Console instances on [https://amio.github.io/console.js/][home]
 were exposed on window. You can fiddle with them(`window.cnsl` and `window.smtc`) in devtools.
 
 #### .register(command, handler[, config])
@@ -126,3 +126,13 @@ were exposed on window. You can fiddle with them(`window.cnsl` and `window.smtc`
 #### .destroy()
 
 - `.destroy()` Suicide.
+
+## License
+
+MIT © [Amio][author]
+
+[screenshot]: https://cloud.githubusercontent.com/assets/215282/9493105/e7e3ee38-4c2f-11e5-85cc-c24168e8c706.png
+[npm-badge]:  https://img.shields.io/npm/v/console.js.svg?style=flat-square
+[npm-link]:   https://www.npmjs.com/package/console.js
+[author]:     https://github.com/amio
+[home]:       https://amio.github.io/console.js/
