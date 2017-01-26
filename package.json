@@ -1,7 +1,7 @@
 {
   "name": "console.js",
   "version": "2.0.0-0",
-  "repository": "https://github.com/amio/console.js.git",
+  "repository": "amio/console.js",
   "author": "Amio <amio.cn@gmail.com>",
   "license": "MIT",
   "main": "dist/console.js",
@@ -12,8 +12,9 @@
     "minor": "npm version minor -m 'v%s'",
     "major": "npm version major -m 'v%s'",
     "postversion": "git push; git push --tags",
-    "prepages": "npm run build && cp dist/console.* gh-pages",
-    "pages": "gh-pages -d gh-pages"
+    "prepublish": "rm -rf dist/index.*",
+    "prepages": "npm run build && cp gh-pages/index.* dist",
+    "pages": "gh-pages -d dist"
   },
   "dependencies": {
     "preact": "7.2.0"
