@@ -29,7 +29,8 @@ class ConsolePanel extends React.Component {
     }[visibility] || !this.state.visible
 
     if (visible === true) {
-      // hide other Console instances
+      this.cmdInput.value = ''
+      // hide other Console panels
       instances.forEach(panel => {
         if (panel === this) return
         panel.setState({ visible: false }, panel.props.config.onHide)
@@ -49,13 +50,26 @@ class ConsolePanel extends React.Component {
         event.preventDefault()
         break
       case 13:  // Enter
-        event.stopPropagation()
         this.props.dispatch(event.target.value)
         this.cmdInput.value = ''
+        event.stopPropagation()
         break
-      default:
-        // event.preventDefault()
+      case 9:   // Tab
+        const prefix = this.cmdInput.value
+        this.cmdInput.value = this.props.autoCompleteFn(prefix)
+        event.preventDefault()
+        break
+      case 38:  // Up
+        this.historySearch('backward')
+        break
+      case 40:  // Down
+        this.historySearch('forward')
+        break
     }
+  }
+
+  historySearch (direction) {
+    console.log('historySearch', direction)
   }
 
   render (props, state) {

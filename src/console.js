@@ -9,7 +9,7 @@ const defaultOptions = {
   onHide: noop,   // on hide callback
   defaultHandler: noop,   // fallback handler
   caseSensitive: false,   // whether case sensitive
-  historySize: 256        // history size
+  autoComplete: true      // press `tab` to auto complete
 }
 
 // Console constructor
@@ -35,7 +35,8 @@ Console.prototype._render = function () {
   const panelProps = {
     config: this.config,
     history: this.history,
-    dispatch: this.dispatch.bind(this)
+    dispatch: this.dispatch.bind(this),
+    autoCompleteFn: this.autoComplete.bind(this)
   }
   const panel = <ConsolePanel ref={p => (this.panel = p)} {...panelProps} />
   this.element = React.render(panel, document.body, this.element)
@@ -44,6 +45,13 @@ Console.prototype._render = function () {
 
 Console.prototype.toggle = function (visibility) {
   this.panel.toggle(visibility)
+}
+
+Console.prototype.log = function (message, instruction) {
+  this.history.push({
+    ins: instruction,
+    msg: message
+  })
 }
 
 Console.prototype.register = function (cmd, handler, config) {
@@ -61,11 +69,21 @@ Console.prototype.register = function (cmd, handler, config) {
   return this
 }
 
-Console.prototype.log = function (message, instruction) {
-  this.history.push({
-    ins: instruction,
-    msg: message
-  })
+Console.prototype.autoComplete = function (prefix) {
+  if (typeof this.config.autoComplete === 'function') {
+    return this.config.autoComplete(prefix)
+  }
+
+  if (this.config.autoComplete) {
+    const cmds = Object.keys(this.handlers)
+    const matched = cmds.filter(cmd => cmd.indexOf(prefix) === 0)
+    if (matched.length === 1) {
+      return matched[0]
+    } else {
+      this.log(matched.map(n => '  ' + n).join('\n'))
+      return prefix
+    }
+  }
 }
 
 Console.prototype.dispatch = function (instruction) {

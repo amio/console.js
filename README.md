@@ -20,8 +20,7 @@ Check the [Live Demo](http://amio.github.io/console.js), or [Basic Usage](#basic
 const cnsl = new Console({ hotkey: 192 })
 
 cnsl.register('addbots', function (num) {
-    // Add some bots,
-    // then tell player:
+    // Add some bots, then tell player:
     return num + ' bots added.'
 })
 ```
@@ -35,7 +34,8 @@ var cnsl = new Console({
     hotkey: 27, // <kbd>ESC</kbd>
     welcome: 'Hello User.',
     caseSensitive: true,
-    defaultHandler: function () {}
+    autoComplete: true,
+    defaultHandler: function () {},
     onShow: function () {},
     onHide: function () {}
 }, {
@@ -44,12 +44,13 @@ var cnsl = new Console({
 });
 ```
 
-- `hotkey` : {Number|boolean} The keyCode of hotkey. `192`(the <kbd>~</kbd>) by default.
+- `hotkey` : {Number|Boolean} The keyCode of hotkey. `192`(the <kbd>~</kbd>) by default.
 - `welcome`: {String} The welcome message. `''` by default.
 - `caseSensitive`: {Boolean} If you want to. `false` by default.
-- `defaultHandler`: {Function} the default handler for any unspecified command. `null` by default.
-- `onShow` : {Function} On show callback. `null` by default.
-- `onHide` : {Function} On hide callback. `null` by default.
+- `autoComplete`: {Boolean|Function} Enable <kbd>tab</kbd> for auto completion.
+- `defaultHandler`: {Function} The fallback handler for all commands. `noop` by default.
+- `onShow` : {Function} On show callback. `noop` by default.
+- `onHide` : {Function} On hide callback. `noop` by default.
 
 #### Register command with extra config
 
@@ -71,6 +72,22 @@ cnsl.register('help', function () {
 }, {
   usage: 'HELP: Show help messages.'
 })
+```
+
+#### Custome autoComplete function
+
+```javascript
+var cnsl = new Console({
+  hotkey: 27,
+  autoComplete: customeAutoComplete
+})
+
+function customeAutoComplete (inputString) {
+  const availableCommands = Object.keys(cnsl.handlers)
+  cnsl.log(availableCommands.join(' '))
+
+  return inputString
+}
 ```
 
 ## API
