@@ -32,90 +32,72 @@ cnsl.register('addbots', function (num) {
 
 ```javascript
 var cnsl = new Console({
-    hotkey: 27, // <kbd>ESC</kbd> ('~' for default)
+    hotkey: 27, // <kbd>ESC</kbd>
     welcome: 'Hello User.',
     caseSensitive: true,
-    defaultHandler: function(){}
-    onShow: function(){},
-    onHide: function(){}
+    defaultHandler: function () {}
+    onShow: function () {},
+    onHide: function () {}
+}, {
+  'cmd1': function (args) {/*...*/},
+  'cmd2': function (args) {/*...*/}
 });
 ```
 
-- `hotkey` : {Number|boolean} The keyCode of hotkey. *Hint: If you want to manually put up
- console(`cnsl.toggle("on")`), set to a falsy value.* `192` by default, the "~".
+- `hotkey` : {Number|boolean} The keyCode of hotkey. `192`(the <kbd>~</kbd>) by default.
 - `welcome`: {String} The welcome message. `''` by default.
 - `caseSensitive`: {Boolean} If you want to. `false` by default.
 - `defaultHandler`: {Function} the default handler for any unspecified command. `null` by default.
 - `onShow` : {Function} On show callback. `null` by default.
 - `onHide` : {Function} On hide callback. `null` by default.
 
-#### Alias
-
-```javascript
-new Console({
-    "add": "addbots",
-    "addbots": function (num) {
-        // add some bots,
-        // then tell player:
-        return num + ' bots added.'
-    }
-});
-```
-
 #### Register command with extra config
 
-`.register(command, commandHandler, commandConfig)`
+`.register(commandName, commandHandler, commandConfig)`
 
 ```javascript
-var playerName = 'Player';
+var cnsl = new Console()
 
-var cnsl = new Console();
-
-cnsl.register('setname',function(name){
-    playerName = name;
-    return 'Player name is' + playerName + ' now.';
+cnsl.register('say', function () {
+  return player.name + ': "' + Array.prototype.join.call(arguments, ' ') + '"'
 }, {
-    usage: 'SETNAME &lt;newname&gt; || NAME &lt;newname&gt;',
-    desc: 'Change your name (works in network play too).'
+  usage: 'SAY <message string>: Broadcast a message to other players in the game.'
 })
 
-.register('help', function () {
-    var cmds = cnsl.commands;
-    for (var name in cmds) {
-        if (cmds.hasOwnProperty(name)) {
-        cmds[name].desc && cnsl.log(' -', cmds[name].usage + ':', cmds[name].desc);
-        }
-    }
-},{
-    usage: 'HELP',
-    desc: 'Show help messages.'
-});
+cnsl.register('help', function () {
+  return Object.keys(cnsl.handlers).map(function (name) {
+    return ' - ' + cnsl.handlers[name].cfg.usage
+  }).join('\n')
+}, {
+  usage: 'HELP: Show help messages.'
+})
 ```
 
-# API
+## API
 
-## Create a Console
+### Create a Console
 
 - `new Console()` Create a console instance (with default options).
 - `new Console(options)` Create a console with options. (see [Basic Usage](#basic-usage))
 
-## Instance Methods
+### Instance Methods
 
-#### .register(cmd, fn[, config])
+#### .register(command, handler[, config])
 
-- `.register(cmd, fn)` Register a `fn` to `cmd`
-- `.register(cmd, fn, config)` Register a `fn` to `cmd` with a config object
+- `.register(command, handler)` Register a `handler` to `command`
+- `.register(command, handler, config)` Register a `handler` to `cmd` with a config object
+- `.register(handler)` Register a `defaultHandler`
+
+#### .log(msg[, cmd])
+
+- `.log(msg)` Write a message to console.
+- `.log(msg, cmd)` Write a message with an instruction to console.
 
 #### .toggle([switch])
 
 - `.toggle()` Toggle the console
-- `.toggle("on")` Show the console
-- `.toggle("off")` Hide the console
-
-#### .printHelp([filterFn])
-
-- `.printHelp()` List available commands to console.
-- `.printHelp( function(x){ return x.indexOf('se') === 0 } )` List commands which starts with "se" to.
+- `.toggle("on")` Open it
+- `.toggle("off")` Close it
 
 #### .destroy()
 
