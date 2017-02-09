@@ -88,6 +88,7 @@ Console.prototype.autoComplete = function (prefix) {
     if (matched.length === 1) {
       return matched[0]
     } else {
+      this.log(prefix)
       this.log(matched.map(n => '  ' + n).join('\n'))
       return prefix
     }
