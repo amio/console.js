@@ -2,6 +2,8 @@
 
 `Console.js` is a tiny lib for creating [Console (video game cli)](https://en.wikipedia.org/wiki/Console_(video_game_CLI)) popups in browser.
 
+NEW: [v2.0 is out](https://github.com/amio/console.js/releases/tag/v2.0.0) 😺
+
 [![Console.js Screenshot][screenshot]][home]
 
 Check the [Live Demo][home], or [Basic Usage](#basic-usage) / [Advance Usage](#advance-usage) / [API](#api).
