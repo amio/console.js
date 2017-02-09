@@ -15,7 +15,7 @@ const config = {
         test: /\.js$/,
         loader: 'babel-loader',
         options: {
-          presets: ['es2015-webpack', 'react']
+          presets: [['es2015', { module: false }], 'react']
         }
       }
     ]
