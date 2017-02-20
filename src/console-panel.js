@@ -15,9 +15,10 @@ class ConsolePanel extends React.Component {
   }
 
   componentDidMount () {
-    this.hotkeyListener = window.addEventListener('keyup', (e) => {
+    this.hotkeyListener = window.addEventListener('keydown', (e) => {
       if (e.keyCode === this.props.config.hotkey) {
         this.toggle()
+        e.preventDefault()
       }
     })
   }
