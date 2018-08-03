@@ -134,7 +134,7 @@ were exposed on window. You can fiddle with them(`window.cnsl` and `window.smtc`
 MIT © [Amio][author]
 
 [screenshot]: https://cloud.githubusercontent.com/assets/215282/9493105/e7e3ee38-4c2f-11e5-85cc-c24168e8c706.png
-[npm-badge]:  https://img.shields.io/npm/v/console.js.svg?style=flat-square
+[npm-badge]:  https://badgen.net/npm/v/console.js
 [npm-link]:   https://www.npmjs.com/package/console.js
 [author]:     https://github.com/amio
 [home]:       https://amio.github.io/console.js/
