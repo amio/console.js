@@ -66,7 +66,7 @@ window.onload = function () {
       '});\n' +
       ' - `hotkey` : {Number|boolean} The keyCode of hotkey. `192`(the "~") by default.\n' +
       ' - `welcome`: {String} The welcome message. `""` by default.\n' +
-      ' - `caseSensitive`: {Boolean} If you want to. `false` by default.' +
+      ' - `caseSensitive`: {Boolean} If you want to. `false` by default.\n' +
       ' - `defaultHandler`: {Function} the fallback handler for all commands. `noop` by default.\n' +
       ' - `onShow` : {Function} On show callback. `noop` by default.\n' +
       ' - `onHide` : {Function} On hide callback. `noop` by default.',
